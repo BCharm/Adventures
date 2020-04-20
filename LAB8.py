@@ -90,8 +90,8 @@ df_y = df['Attrition']
 df_x = df[x_attr]
 
 X_train, X_test, y_train, y_test = train_test_split(df_x, df_y, test_size=0.5, random_state=0)
-# X_train = scale(X_train[['MonthlyIncome','Age','TotalWorkingYears','YearsAtCompany']])
-# X_test = scale(X_test[['MonthlyIncome','Age','TotalWorkingYears','YearsAtCompany']])
+X_train = scale(X_train[['MonthlyIncome','Age','TotalWorkingYears','YearsAtCompany']])
+X_test = scale(X_test[['MonthlyIncome','Age','TotalWorkingYears','YearsAtCompany']])
 logr = LogisticRegression(max_iter=1000)
 logr.fit(X_train, y_train)
 y_pred = logr.predict(X_test)
